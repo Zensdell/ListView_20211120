@@ -1,6 +1,7 @@
 package com.nepplus.listview_20211120
 
 import android.content.DialogInterface
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -38,8 +39,17 @@ class MainActivity : AppCompatActivity() {
 //            position : 몇번째 줄이 눌렸는지 알려줌.
             val clickedStudent = mStudentList[position]
 
-            Toast.makeText(this, "${clickedStudent.name} 클릭됨", Toast.LENGTH_SHORT).show()
-            
+//            Toast.makeText(this, "${clickedStudent.name} 클릭됨", Toast.LENGTH_SHORT).show()
+
+//            화면 이동 Intent 활용.
+            val myIntent = Intent(this,ViewStudentDetailActivity::class.java)
+
+            myIntent.putExtra("name", clickedStudent.name)
+            myIntent.putExtra("age", clickedStudent.getAgeByYear(2021))
+            myIntent.putExtra("address", clickedStudent.address)
+
+            startActivity(myIntent)
+
         }
         
         studentListView.setOnItemLongClickListener { parent, view, position, id -> 
