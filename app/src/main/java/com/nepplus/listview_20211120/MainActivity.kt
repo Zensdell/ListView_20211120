@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
 
 //            학생 제거 전에, 진짜로 삭제할건지 물어보자. AlerDialog
             val alert = AlertDialog.Builder(  this)
-            alert.setTitle("학생 삭제 확인")
+//            alert.setTitle("학생 삭제 확인")
             alert.setMessage("정말 ${longClickedStudent.name} 학생을 삭제하시겠습니가?")
             alert.setPositiveButton("확인", DialogInterface.OnClickListener { dialog, which ->
 
@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
                 mStudentAdapter.notifyDataSetChanged()
 
             })
-            alert.setNegativeButton("취소",null)
+//            alert.setNegativeButton("취소",null)
 
             alert.show()
 
