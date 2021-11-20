@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.nepplus.listview_20211120.adpaters.StudentAdapter
 import com.nepplus.listview_20211120.datas.StudentData
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,7 +26,9 @@ class MainActivity : AppCompatActivity() {
         mStudentList.add(StudentData("윤성노",1985,"서울시 중랑구"))
         mStudentList.add(StudentData("최연주",1974,"서울시 성북구"))
 
-        mStudentAdapter = StudentAdapter(this,R.layout.student_list_item, mStudentList
+        mStudentAdapter = StudentAdapter(this,R.layout.student_list_item, mStudentList)
+
+        studentListView.adapter = mStudentAdapter
 
 
 
