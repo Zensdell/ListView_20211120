@@ -2,6 +2,7 @@ package com.nepplus.listview_20211120
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.nepplus.listview_20211120.adpaters.StudentAdapter
 import com.nepplus.listview_20211120.datas.StudentData
 import kotlinx.android.synthetic.main.activity_main.*
@@ -30,6 +31,14 @@ class MainActivity : AppCompatActivity() {
 // xml에  studentListView 있지? 여기에 .adapter해줄건데 그 어댑터를 mStudentAdapter (StudentAdapter)야
         studentListView.adapter = mStudentAdapter
 
+        studentListView.setOnItemClickListener { parent, view, position, id -> 
+            
+//            position : 몇번째 줄이 눌렸는지 알려줌.
+            val clickedStudent = mStudentList[position]
+
+            Toast.makeText(this, "${clickedStudent.name} 클릭됨", Toast.LENGTH_SHORT).show()
+            
+        }
 
 
     }
