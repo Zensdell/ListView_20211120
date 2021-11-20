@@ -44,7 +44,11 @@ class StudentAdapter(
 //      ui데이터에 필요한 변수 추출 반영
         txtStudentName.text = data.name
 
-        txtAge.text = "${data.birthYear}년생"
+//        txtAge.text = "${data.birthYear}년생"
+//       (34세) 등 나이를 계산 / 가공 한국식 나이 + 1
+        val age = 2021 - data.birthYear + 1
+        txtAge.text = "(${age}세)"
+
         txtAddress.text=data.address
 
 
