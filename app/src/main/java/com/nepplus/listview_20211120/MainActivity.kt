@@ -2,10 +2,12 @@ package com.nepplus.listview_20211120
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.nepplus.listview_20211120.adpaters.StudentAdapter
 import com.nepplus.listview_20211120.datas.StudentData
 
 class MainActivity : AppCompatActivity() {
 
+    lateinit var mStudentAdapter : StudentAdapter
     val mStudentList = ArrayList<StudentData>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,9 +22,14 @@ class MainActivity : AppCompatActivity() {
         mStudentList.add(StudentData("김찬수",1996,"서울시 성북구"))
         mStudentList.add(StudentData("김창배",1993, "서울시 노원구"))
         mStudentList.add(StudentData("성연진",1994,"서울시 성동구"))
-        mStudentList.add(StudentData("윤성노",1985,""))
-        mStudentList.add(StudentData("최연주",1974,""))
-        mStudentList.add(StudentData())
+        mStudentList.add(StudentData("윤성노",1985,"서울시 중랑구"))
+        mStudentList.add(StudentData("최연주",1974,"서울시 성북구"))
+
+        mStudentAdapter = StudentAdapter(this,R.layout.student_list_item, mStudentList
+
+
+
+
 
     }
 }
