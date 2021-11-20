@@ -12,7 +12,8 @@ import com.nepplus.listview_20211120.datas.StudentData
 class StudentAdapter(
     val mContext: Context,
     val resId:Int,
-    val mList : ArrayList<StudentData>) : ArrayAdapter<StudentData>(mContext,resId,mList){
+    val mList : ArrayList<StudentData>)
+    : ArrayAdapter<StudentData>(mContext,resId,mList){
 
 //        Adapter 역할: xml + 데이터 클래스 자료 조합.
 
@@ -26,6 +27,7 @@ class StudentAdapter(
         var tempRow = convertView
     
         if(tempRow == null){
+
             tempRow = mInflater.inflate(R.layout.student_list_item,null)
         }
 
