@@ -9,6 +9,7 @@ import androidx.appcompat.app.AlertDialog
 import com.nepplus.listview_20211120.adpaters.StudentAdapter
 import com.nepplus.listview_20211120.datas.StudentData
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.ArrayList
 
 class MainActivity : AppCompatActivity() {
 // 빈바구니를 가져옴 mStudentAdapter 에  StudentAdapter 넣을건데 lateinit란 뜻은 나중에 실제 값을 넣어주겠단 거야
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         mStudentList.add(StudentData("성연진",1994,"서울시 성동구"))
         mStudentList.add(StudentData("윤성노",1985,"서울시 중랑구"))
         mStudentList.add(StudentData("최연주",1974,"서울시 성북구"))
-// mStudentAdapter에 실제 값 대입 여기 화면에서 student_list_item이 레이아웃의  mStudentList 목록을 뿌려줄거야
+// mStudentAdapter에 실제 값 대입 this 여기 화면에서 student_list_item이 레이아웃의  mStudentList 목록을 뿌려줄거야
         mStudentAdapter = StudentAdapter(this,R.layout.student_list_item, mStudentList)
 // xml에  studentListView 있지? 여기에 .adapter해줄건데 그 어댑터를 mStudentAdapter (StudentAdapter)야
         studentListView.adapter = mStudentAdapter
@@ -59,7 +60,6 @@ class MainActivity : AppCompatActivity() {
 
 //            Toast.makeText(this, "${longClickedStudent.name} 길게 클릭됨", Toast.LENGTH_SHORT).show()
 
-
 //            학생 제거 전에, 진짜로 삭제할건지 물어보자. AlerDialog
             val alert = AlertDialog.Builder(  this)
 //            alert.setTitle("학생 삭제 확인")
@@ -80,8 +80,6 @@ class MainActivity : AppCompatActivity() {
 //            alert.setNegativeButton("취소",null)
 
             alert.show()
-
-
 
 
             return@setOnItemLongClickListener true
